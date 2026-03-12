@@ -1,50 +1,65 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+- Version change: 0.0.0 → 1.0.0
+- List of modified principles:
+  - Initialized from template with concrete values.
+  - Added "I. Open Source & Free Software Only" (User Directive).
+  - Added "II. Portuguese Language Focus" (Project Context).
+  - Added "III. Modular & Testable" (Best Practice).
+  - Added "IV. Documentation as Code" (Best Practice).
+  - Added "V. Simple & Maintainable" (Best Practice).
+- Added sections:
+  - Technical Constraints
+  - Workflow & Quality
+- Removed sections: None.
+- Templates requiring updates:
+  - .specify/templates/plan-template.md (✅ updated/checked)
+  - .specify/templates/spec-template.md (✅ updated/checked)
+  - .specify/templates/tasks-template.md (✅ updated/checked)
+- Follow-up TODOs: None.
+-->
+
+# pt-tts Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Open Source & Free Software Only
+The project MUST exclusively use open source or free software. This applies to all libraries, frameworks, tools, and dependencies used in development, testing, and production. No proprietary software is allowed. All dependencies must have licenses compatible with open-source redistribution (e.g., MIT, Apache 2.0, GPL, BSD).
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Portuguese Language Focus
+The primary focus of the project is the Portuguese language, specifically for Text-to-Speech (TTS) applications. All phonetic rules, linguistic models, and datasets must prioritize Portuguese linguistic accuracy and regional variations where applicable.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Modular & Testable
+Every component must be modular and independently testable. We follow a library-first approach where core logic is decoupled from any specific interface (CLI, Web, etc.). High test coverage is mandatory for core linguistic logic.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Documentation as Code
+Documentation, including this constitution, specifications, and implementation plans, must be maintained alongside the code in the repository. Documentation is the single source of truth for project governance and requirements.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Simple & Maintainable
+We prioritize simplicity and long-term maintainability over complex "just-in-case" features. The YAGNI (You Ain't Gonna Need It) principle is strictly enforced to avoid over-engineering.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Technical Constraints
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### License Compliance
+All third-party dependencies must be audited for license compliance. Tools used in the CI/CD pipeline must also be open source or free for use in open-source projects.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Language & Compatibility
+Core libraries should be written in languages that offer broad cross-platform compatibility and strong performance for audio processing.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Workflow & Quality
+
+### Spec-First Development
+No feature implementation may begin without a verified and approved specification (`spec.md`) and implementation plan (`plan.md`).
+
+### Automated Validation
+The CI/CD pipeline must enforce linting, type-checking, and automated testing for every pull request. Failure to meet these quality gates blocks merging.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+### Amendment Procedure
+This constitution is a living document. Amendments require a version bump and an update to the `LAST_AMENDED_DATE`. Changes must be documented in the Sync Impact Report at the top of this file.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+### Compliance Review
+All implementation plans and task lists must include a "Constitution Check" to ensure alignment with these core principles.
+
+**Version**: 1.0.0 | **Ratified**: 2026-03-12 | **Last Amended**: 2026-03-12
